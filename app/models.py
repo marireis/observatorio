@@ -14,6 +14,7 @@ class Pesquisador(models.Model):
 
     class Meta:
         verbose_name_plural = "Pesquisadores"
+        verbose_name = "Pesquisador"
 
 class Programa(models.Model):
     nome = models.CharField(max_length=50, null=False, verbose_name="Nome")
@@ -22,6 +23,10 @@ class Programa(models.Model):
 
     def __str__(self):
         return self.nome
+
+    class Meta:
+        verbose_name_plural = "Programas"
+        verbose_name = "Programa"
 
 class Instituicao(models.Model):
     nome = models.CharField(null=False, max_length=50, verbose_name="Nome")
@@ -33,6 +38,7 @@ class Instituicao(models.Model):
 
     class Meta:
         verbose_name_plural = "Instituições"
+        verbose_name = "Instituição"
 
 class Bolsa(models.Model):
     PAISES_CHOICES = ( ("afeganistao", "Afeganistão"), ("africa_do_sul", "África do Sul"), ("albania", "Albânia"),
@@ -116,3 +122,7 @@ class Bolsa(models.Model):
 
     def __str__(self):
         return self.descricao
+
+    class Meta:
+        verbose_name_plural = "Bolsas"
+        verbose_name = "Bolsa"
